@@ -1,68 +1,52 @@
-House Pricing Prediction
+# HOUSE PRICING PREDICTION
 
 Predict house prices using regression models with scikit-learn.
 Includes data preprocessing, model training, evaluation, and comparison between Linear and Polynomial Regression.
 
-Project Goals
+## PROJECT GOALS
 
-Predict house prices based on features such as size, location, and number of rooms
+- Predict house prices based on features such as size, location, and number of rooms
+- Evaluate model performance using standard regression metrics
+- Compare Linear Regression and Polynomial Regression
 
-Evaluate model performance using standard regression metrics
+## TOOLS & LIBRARIES
 
-Compare Linear Regression and Polynomial Regression
+- Python
+- NumPy
+- Pandas
+- scikit-learn
+- Tabulate
 
-Tools & Libraries
+## MODELS USED
 
-Python
+- Linear Regression
+- Polynomial Regression
 
-NumPy
+## EVALUATION METRICS
 
-Pandas
+- **R² SCORE**: Measures explained variance
+- **MAE**: Mean absolute error
+- **MSE**: Mean squared error
 
-scikit-learn
+## PROJECT STRUCTURE
 
-Tabulate
+1. Data preprocessing
+2. Model training
+3. Model evaluation
+4. Results display
 
-Models Used
+## EXAMPLE OUTPUT
 
-Linear Regression
+- Results are displayed in a clear table format
+- Tabulate improves readability and organization
 
-Polynomial Regression
+## LEARNING OUTCOMES
 
-Evaluation Metrics
+- Understand regression workflow for house price prediction
+- Apply evaluation metrics effectively
+- Use pipelines for clean, maintainable code
 
-R² Score: Measures explained variance
+## NOTES
 
-MAE: Mean absolute error
-
-MSE: Mean squared error
-
-Project Structure
-
-Data preprocessing
-
-Model training
-
-Model evaluation
-
-Results display
-
-Example Output
-
-Results are displayed in a clear table format
-
-Tabulate improves readability and organization
-
-Learning Outcomes
-
-Understand regression workflow for house price prediction
-
-Apply evaluation metrics effectively
-
-Use pipelines for clean, maintainable code
-
-Notes
-
-Educational project focused on practical implementation
-
-Suitable for learning and experimentation
+- Educational project focused on practical implementation
+- Suitable for learning and experimentation
