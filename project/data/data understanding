@@ -1,0 +1,35 @@
+# HOUSE_PRICES.CSV DATASET
+
+This repository contains a structured dataset of residential property sales with location, dwelling attributes, and proximity features (transport + schools). Each row represents a single property transaction.
+
+## CONTENTS
+
+- Property identity & area: ADDRESS, SUBURB, POSTCODE  
+- Sale outcome: PRICE, DATE_SOLD  
+- Home characteristics: BEDROOMS, BATHROOMS, GARAGE, LAND_AREA, FLOOR_AREA, BUILD_YEAR  
+- Geospatial context: LATITUDE, LONGITUDE, CBD_DIST  
+- Accessibility & amenities: NEAREST_STN, NEAREST_STN_DIST, NEAREST_SCH, NEAREST_SCH_DIST, NEAREST_SCH_RANK  
+
+Example (first row, abbreviated):  
+1 Acorn Place, South Lake, 565000, 4, 2, 2, 600, 160, 2003, 18300, Cockburn Central Station, 1800, 09-2018, 6164, -32.1159, 115.84245, LAKELAND SENIOR HIGH SCHOOL, 0.8283..., (rank missing)
+
+## DATA QUALITY NOTES
+
+- Some fields contain missing values (BUILD_YEAR, GARAGE, NEAREST_SCH_RANK)  
+- DATE_SOLD may include hidden carriage returns ("09-2018\r") that should be stripped during import  
+
+## COMMON USE CASES
+
+- House price prediction (regression) using structural, location, and amenity features  
+- Feature engineering (e.g., price per sqm, property age, distance bands)  
+- Geospatial analysis (mapping prices by suburb, lat/long clustering)  
+- Accessibility studies (impact of proximity to stations/schools on price)  
+
+## HOW TO LOAD
+
+**Python (pandas)**  
+```python
+import pandas as pd
+df = pd.read_csv("House_Prices.csv")
+df["DATE_SOLD"] = df["DATE_SOLD"].astype(str).str.replace("\r", "", regex=False).str.strip()
+df = df.replace("NULL", pd.NA)
