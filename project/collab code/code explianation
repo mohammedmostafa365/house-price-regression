@@ -1,0 +1,59 @@
+# HOUSE PRICE PREDICTION NOTEBOOK (`PATHLINE_TASK1_HOUSES_DB.ipynb`)
+
+This project implements a **machine-learning workflow** to predict house sale prices using the dataset **`House_Prices.csv`**. It is designed to run in **Google Colab or Jupyter Notebook** and demonstrates data preprocessing, feature engineering, modeling, and evaluation.
+
+## Dataset Overview
+
+- **Rows / Columns:** 33,656 rows × 19 columns  
+- **Features include:**  
+  - Property attributes: BEDROOMS, BATHROOMS, GARAGE, LAND_AREA, FLOOR_AREA, BUILD_YEAR  
+  - Location: SUBURB, POSTCODE, LATITUDE, LONGITUDE, CBD_DIST  
+  - Amenities: NEAREST_STN, NEAREST_STN_DIST, NEAREST_SCH, NEAREST_SCH_DIST, NEAREST_SCH_RANK  
+- **Target:** `PRICE` (house sale price)
+
+## Workflow
+
+1. **Imports & Setup**  
+   Uses **pandas**, **NumPy**, **Matplotlib**, **Seaborn**, **scikit-learn**, and **tabulate**.  
+
+2. **Data Loading & Cleaning**  
+   - Reads `House_Prices.csv`  
+   - Handles missing values via mean imputation  
+   - Removes duplicates  
+   - Cleans string artifacts (e.g., `DATE_SOLD` carriage returns)  
+
+3. **Exploratory Data Analysis (EDA)**  
+   - Visualizes price distribution  
+   - Scatterplots for numeric features vs `PRICE`  
+
+4. **Feature Selection**  
+   - **Numerical:** BEDROOMS, BATHROOMS, GARAGE, LAND_AREA, FLOOR_AREA, BUILD_YEAR, CBD_DIST, NEAREST_STN_DIST, NEAREST_SCH_DIST, NEAREST_SCH_RANK, POSTCODE, LATITUDE, LONGITUDE  
+   - **Categorical:** SUBURB, NEAREST_STN (one-hot encoded)
+
+5. **Train/Test Split**  
+   - 80% training, 20% testing  
+   - `random_state=1` for reproducibility
+
+6. **Modeling**  
+   - **Baseline Linear Regression**  
+   - **Pipeline-based Linear Regression:**  
+     - StandardScaler for numeric features  
+     - OneHotEncoder for categorical features  
+   - Demonstrates improved performance using pipelines
+
+7. **Evaluation**  
+   - Metrics: **R², MAE, MSE, RMSE**  
+   - Produces Actual vs Predicted comparison  
+
+## Notes & Recommendations
+
+- Avoid data leakage: perform imputation inside training pipeline  
+- Adjust hard-coded paths if not using Colab  
+- Consider outlier handling for extreme LAND_AREA or GARAGE values  
+- For stronger performance, explore **RandomForestRegressor** or gradient boosting  
+
+## Quick Start
+
+1. Open notebook in Colab or Jupyter  
+2. Load `House_Prices.csv`  
+3. Run all cells to reproduce analysis, model training, and evaluation
